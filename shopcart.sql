@@ -76,7 +76,7 @@ CREATE TABLE `carts` (
   `id` int NOT NULL AUTO_INCREMENT,
   `CustomerID` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,7 +85,7 @@ CREATE TABLE `carts` (
 
 LOCK TABLES `carts` WRITE;
 /*!40000 ALTER TABLE `carts` DISABLE KEYS */;
-INSERT INTO `carts` VALUES (1,1),(2,2),(3,3);
+INSERT INTO `carts` VALUES (1,1),(2,2),(3,3),(4,4),(21,15),(22,16);
 /*!40000 ALTER TABLE `carts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -107,7 +107,7 @@ CREATE TABLE `carts_product` (
   KEY `ProductID` (`ProductID`),
   CONSTRAINT `carts_product_ibfk_1` FOREIGN KEY (`CartID`) REFERENCES `carts` (`id`),
   CONSTRAINT `carts_product_ibfk_2` FOREIGN KEY (`ProductID`) REFERENCES `products` (`idPro`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -213,7 +213,7 @@ CREATE TABLE `customers` (
   `User` varchar(100) DEFAULT NULL,
   `Password` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -222,7 +222,7 @@ CREATE TABLE `customers` (
 
 LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
-INSERT INTO `customers` VALUES (1,'b','1'),(2,'b1','1'),(3,'b2','1');
+INSERT INTO `customers` VALUES (1,'b','1'),(2,'b1','1'),(3,'b2','1'),(4,'q','1');
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -251,6 +251,31 @@ INSERT INTO `delivery` VALUES (1,'Express'),(2,'Fast'),(3,'Slow');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `facebook`
+--
+
+DROP TABLE IF EXISTS `facebook`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `facebook` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `facebookID` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `facebookID_UNIQUE` (`facebookID`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `facebook`
+--
+
+LOCK TABLES `facebook` WRITE;
+/*!40000 ALTER TABLE `facebook` DISABLE KEYS */;
+INSERT INTO `facebook` VALUES (7,'679005911028683');
+/*!40000 ALTER TABLE `facebook` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `footer_banner`
 --
 
@@ -276,6 +301,30 @@ INSERT INTO `footer_banner` VALUES (1,'MONEY BACK','30 Days Money Back Guarantee
 UNLOCK TABLES;
 
 --
+-- Table structure for table `google`
+--
+
+DROP TABLE IF EXISTS `google`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `google` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `googleID` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `google`
+--
+
+LOCK TABLES `google` WRITE;
+/*!40000 ALTER TABLE `google` DISABLE KEYS */;
+INSERT INTO `google` VALUES (11,'106243873921029979288');
+/*!40000 ALTER TABLE `google` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `guest`
 --
 
@@ -286,7 +335,7 @@ CREATE TABLE `guest` (
   `id` int NOT NULL AUTO_INCREMENT,
   `Name` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -295,7 +344,7 @@ CREATE TABLE `guest` (
 
 LOCK TABLES `guest` WRITE;
 /*!40000 ALTER TABLE `guest` DISABLE KEYS */;
-INSERT INTO `guest` VALUES (1,'32'),(7,'2'),(8,'3'),(9,'4'),(10,'5');
+INSERT INTO `guest` VALUES (1,'32'),(7,'2'),(8,'3'),(9,'4'),(10,'5'),(11,'6'),(12,'7'),(13,'8'),(14,'9'),(15,'10'),(16,'11');
 /*!40000 ALTER TABLE `guest` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -313,7 +362,7 @@ CREATE TABLE `guest_product` (
   `ColorID` int DEFAULT NULL,
   `Amount` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -322,7 +371,7 @@ CREATE TABLE `guest_product` (
 
 LOCK TABLES `guest_product` WRITE;
 /*!40000 ALTER TABLE `guest_product` DISABLE KEYS */;
-INSERT INTO `guest_product` VALUES (1,1,1,3,1),(9,2,2,0,1),(10,3,1,3,13),(11,3,1,2,8),(12,4,2,0,1),(13,4,1,2,10),(14,5,1,2,4),(15,5,1,3,4);
+INSERT INTO `guest_product` VALUES (1,1,1,3,1),(9,2,2,0,1),(10,3,1,3,13),(11,3,1,2,8),(12,4,2,0,1),(13,4,1,2,10),(14,5,1,2,4),(15,5,1,3,4),(16,6,3,0,1),(17,7,3,0,1),(18,8,2,0,1),(19,9,4,0,1),(20,10,4,0,1),(21,11,2,0,1);
 /*!40000 ALTER TABLE `guest_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -365,7 +414,9 @@ DROP TABLE IF EXISTS `information`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `information` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `CustomerID` int DEFAULT NULL,
+  `AccID` int DEFAULT NULL,
+  `FaceID` int DEFAULT NULL,
+  `GooID` int DEFAULT NULL,
   `UserName` varchar(45) DEFAULT NULL,
   `FullName` varchar(100) DEFAULT NULL,
   `Image` varchar(200) DEFAULT NULL,
@@ -375,7 +426,7 @@ CREATE TABLE `information` (
   `Gender` int DEFAULT NULL,
   `Verify` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -384,7 +435,7 @@ CREATE TABLE `information` (
 
 LOCK TABLES `information` WRITE;
 /*!40000 ALTER TABLE `information` DISABLE KEYS */;
-INSERT INTO `information` VALUES (1,1,'Va','Vanh','../static/img-test/alex-suprun-ZHvM3XIOHoE-unsplash.jpg','0987654321','a@gmail.com','2002-10-13',2,NULL);
+INSERT INTO `information` VALUES (1,1,NULL,NULL,'Va','Vanh','../static/img-test/alex-suprun-ZHvM3XIOHoE-unsplash.jpg','0987654321','a@gmail.com','2002-10-13',2,NULL),(2,2,NULL,NULL,'da',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(3,3,NULL,NULL,'awd',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4,4,NULL,NULL,'ad',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(15,NULL,NULL,11,'6r9rh','Ahh Viet',NULL,NULL,'vietahh02@gmail.com',NULL,NULL,NULL),(16,NULL,7,NULL,'qe6d_','Viet Anh',NULL,NULL,'vietahh2002@gmail.com',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `information` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -678,4 +729,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-27 20:31:03
+-- Dump completed on 2023-12-21 13:54:59
